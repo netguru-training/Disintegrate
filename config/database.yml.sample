@@ -1,0 +1,17 @@
+default: &default
+  adapter:  postgresql
+  host:     localhost
+  encoding: unicode
+  pool:     5
+
+development:
+  <<: *default
+  database: disintegrate_development
+
+test:
+  <<: *default
+  database: disintegrate_test
+
+production:
+  <<: *default
+  database: disintegrate_production
