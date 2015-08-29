@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150829105343) do
+ActiveRecord::Schema.define(version: 20150829135540) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,10 +24,16 @@ ActiveRecord::Schema.define(version: 20150829105343) do
     t.string   "map_lat"
     t.string   "map_long"
     t.integer  "price"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
     t.integer  "number_of_places"
+    t.integer  "user_id"
+    t.boolean  "hide",             default: true
+    t.string   "address"
   end
+
+  add_index "advertisements", ["hide"], name: "index_advertisements_on_hide", using: :btree
+  add_index "advertisements", ["user_id"], name: "index_advertisements_on_user_id", using: :btree
 
   create_table "applications", force: :cascade do |t|
     t.boolean  "accepted"

@@ -1,17 +1,21 @@
+<<<<<<< HEAD
 = content_for :header do
   = stylesheet_link_tag 'https://api.mapbox.com/mapbox.js/v2.2.1/mapbox.css'
   = javascript_include_tag 'https://api.mapbox.com/mapbox.js/v2.2.1/mapbox.js'
 
 
+=======
+%h1= advertisement.title
+>>>>>>> 59f705fc2a53b0a87bc20a1de25e4a761a01559b
 
 %table.table.table-condensed
   %tbody
     %tr
-      %td= t('Title')
-      %td= advertisement.title
-    %tr
       %td= t('Description')
       %td= advertisement.description
+    %tr
+      %td= t('Address')
+      %td= advertisement.address
     %tr
       %td= t('Start date')
       %td= advertisement.start_date

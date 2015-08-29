@@ -1,9 +1,11 @@
 %tr
   %td= advertisement.title
+  %td= advertisement.address
   %td= advertisement.start_date
   %td= advertisement.end_date
   %td= advertisement.price
   %td= advertisement.number_of_places
   %td
     = link_to t('Show'), advertisement_path(advertisement), class: 'btn btn-default'
-    = link_to t('Edit'), edit_advertisement_path(advertisement), class: 'btn btn-default'
+    - if current_user.present? && current_user.owner?(advertisement)
+      = link_to t('Edit'), edit_advertisement_path(advertisement), class: 'btn btn-default'

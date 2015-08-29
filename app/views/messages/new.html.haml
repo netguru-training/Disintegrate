@@ -1,0 +1,6 @@
+-#= binding.pry
+= simple_form_for message do |f|
+  = f.input :title
+  = f.input :content
+  = f.association :receiver, label_method: :name, value_method: :id, label: 'Receiver', collection: users
+  = f.button :submit
