@@ -1,8 +1,13 @@
 class AdvertisementsController < ApplicationController
+
+  before_action :authenticate_user!, except: [:index]
+  before_action :check_ownership, only: [:edit, :update, :destroy]
+
   expose(:advertisement, attributes: :advertisements_params)
   expose(:advertisements)
 
   def create
+    advertisement.user = current_user
     if advertisement.save
       redirect_to(advertisement)
     else
@@ -29,4 +34,7 @@ class AdvertisementsController < ApplicationController
     params.require(:advertisement).permit(:description, :end_date, :number_of_places, :price, :start_date, :title)
   end
 
+  def check_ownership
+    current_user.present? && current_user.owner?(advertisement)
+  end
 end

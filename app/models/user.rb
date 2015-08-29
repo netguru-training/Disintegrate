@@ -13,4 +13,9 @@ class User < ActiveRecord::Base
   def can_edit(user)
     self == user
   end
+
+  def owner?(advertisement)
+    advertisement.user_id == self.id
+  end
+
 end
