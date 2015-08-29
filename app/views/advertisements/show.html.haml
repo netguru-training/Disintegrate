@@ -1,10 +1,10 @@
 %table.table.table-condensed
   %tbody
     %tr
-      %td= 'Title'
+      %td= t('Title')
       %td= advertisement.title
     %tr
-      %td= 'Description'
+      %td= t('Description')
       %td= advertisement.description
 
-= link_to 'Back', advertisements_path, class: 'btn btn-default'
+= link_to t('Back'), advertisements_path, class: 'btn btn-default'
