@@ -1,12 +1,10 @@
-<<<<<<< HEAD
 = content_for :header do
   = stylesheet_link_tag 'https://api.mapbox.com/mapbox.js/v2.2.1/mapbox.css'
   = javascript_include_tag 'https://api.mapbox.com/mapbox.js/v2.2.1/mapbox.js'
 
 
-=======
 %h1= advertisement.title
->>>>>>> 59f705fc2a53b0a87bc20a1de25e4a761a01559b
+
 
 %table.table.table-condensed
   %tbody
@@ -34,6 +32,8 @@
 #map
 
 :javascript
+  var lat = #{advertisement.map_lat}
+  var long = #{advertisement.map_long}
   L.mapbox.accessToken = 'pk.eyJ1IjoibmV0Z3VydXdvcmtzaG9wcyIsImEiOiIwODdmZmNlYTViMzMxZTQyY2U5NjI1NWVmMGI4MzI1YSJ9.pTSx-gR1dHPt2lmMutPIZQ';
     var map = L.mapbox.map('map', 'netguruworkshops.na5f19j3')
-      .setView([40, -74.50], 9);
+      .setView([lat, long], 9);

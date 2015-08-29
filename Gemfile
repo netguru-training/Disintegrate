@@ -17,6 +17,7 @@ gem 'simple_form'
 gem 'devise'
 gem 'decent_exposure'
 gem 'decent_decoration'
+gem 'geocoder'
 
 group :development do
   gem 'better_errors'
