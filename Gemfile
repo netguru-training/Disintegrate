@@ -15,6 +15,8 @@ gem 'haml-rails'
 gem 'pg'
 gem 'simple_form'
 gem 'devise'
+gem 'decent_exposure'
+gem 'decent_decoration'
 
 group :development do
   gem 'better_errors'
