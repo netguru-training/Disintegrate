@@ -8,6 +8,8 @@ class User < ActiveRecord::Base
   has_many :received_messages, :class_name => "Message", :foreign_key => "receiver_id"
   has_many :advertisements
 
+  validates_presence_of :email, :description, :name
+
   def can_edit(user)
     self == user
   end
