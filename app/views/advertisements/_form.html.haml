@@ -1,0 +1,5 @@
+= simple_form_for(advertisement) do |form|
+  = form.input :title
+  = form.input :description
+  = link_to 'Back', advertisements_path, class: 'btn btn-default'
+  = form.button :submit
