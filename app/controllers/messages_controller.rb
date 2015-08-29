@@ -8,13 +8,17 @@ class MessagesController < ApplicationController
   def create
     self.message.sender = current_user
     if message.save
-      redirect_to root_path
+      redirect_to action: "show", user_id: message.receiver.id
     else
       render :new
     end
   end
 
   def new
+  end
+
+  def show
+   self.messages = Message.by_users(params[:user_id], current_user.id).order('created_at desc')
   end
 
   def message_params

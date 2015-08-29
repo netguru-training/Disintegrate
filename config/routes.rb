@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   resources :advertisements
 
-  resources :messages
+  resources :messages, except: [:destroy, :edit, :show, :update]
 
+  get 'messages/:user_id', to: 'messages#show'
 end
