@@ -18,6 +18,13 @@ class AdvertisementsController < ApplicationController
     end
   end
 
+  def show
+    respond_to do |format|
+      format.html
+      format.js
+    end
+  end
+
   def destroy
     advertisement.destroy
     redirect_to advertisements_path, notice: 'Advertisement deleted'
