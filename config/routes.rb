@@ -9,5 +9,5 @@ Rails.application.routes.draw do
 
   resources :messages, except: [:destroy, :edit, :show, :update]
 
-  get 'messages/:user_id', to: 'messages#show'
+  get 'messages/:user_id', to: 'messages#show', as: :message
 end
