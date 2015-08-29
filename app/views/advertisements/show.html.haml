@@ -6,5 +6,17 @@
     %tr
       %td= t('Description')
       %td= advertisement.description
+    %tr
+      %td= t('Start date')
+      %td= advertisement.start_date
+    %tr
+      %td= t('End date')
+      %td= advertisement.end_date
+    %tr
+      %td= t('Price')
+      %td= advertisement.price
+    %tr
+      %td= t('Number of places')
+      %td= advertisement.number_of_places
 
 = link_to t('Back'), advertisements_path, class: 'btn btn-default'
