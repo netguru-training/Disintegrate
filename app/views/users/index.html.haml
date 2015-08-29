@@ -4,9 +4,13 @@
       %td Name:
       %td Email:
       %td Description:
+      %td Links:
     - @users.each do |u|
       %tr
         %td=u.name
         %td=u.email
         %td=u.description
+        %td
+          -if u==current_user
+            =link_to 'Edit', edit_user_path(u)
 

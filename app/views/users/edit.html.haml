@@ -1,0 +1,5 @@
+=simple_form_for (@user) do |u|
+  = u.input :email, required: true, autofocus: true
+  = u.input :name, required: true
+  = u.input :description, required: true
+  = u.button :submit
