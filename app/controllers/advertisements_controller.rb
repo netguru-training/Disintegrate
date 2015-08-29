@@ -31,7 +31,7 @@ class AdvertisementsController < ApplicationController
   private
 
   def advertisements_params
-    params.require(:advertisement).permit(:description, :end_date, :hide, :number_of_places, :price, :start_date, :title)
+    params.require(:advertisement).permit(:address, :description, :end_date, :hide, :number_of_places, :price, :start_date, :title)
   end
 
   def check_ownership
