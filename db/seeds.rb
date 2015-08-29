@@ -7,7 +7,6 @@ User.destroy_all
     description: Faker::Lorem.paragraph(2),
     password: Faker::Internet.password
   )
-end
 
   2.times do
     Advertisement.create!(
