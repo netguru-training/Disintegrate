@@ -4,8 +4,8 @@
   = form.input :address
   = link_to 'Show on the Map', "", onclick: "showMapForm()", remote: true, id: "map_link"
   .show_map#map.small-map
-  = form.input :start_date
-  = form.input :end_date
+  = form.input :start_date, as: :date
+  = form.input :end_date, as: :date
   = form.input :price
   = form.input :number_of_places
   = form.input :hide

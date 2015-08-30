@@ -3,8 +3,8 @@ class AdvertisementsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   before_action :check_ownership, only: [:edit, :update, :destroy]
 
-  expose(:advertisement, attributes: :advertisements_params)
-  expose(:advertisements) {Advertisement.paginate(page: params[:page], per_page: 10)}
+  expose_decorated(:advertisement, attributes: :advertisements_params)
+  expose_decorated(:advertisements) {Advertisement.paginate(page: params[:page], per_page: 10)}
   expose_decorated(:comments, ancestor: :advertisement)
   expose(:comment) { Comment.new }
 

@@ -1,6 +1,5 @@
-class BaseDecorator < Draper::Decorator
-  delegate_all
-
+\
+class BaseDecorator < ApplicationDecorator
   def pretty_date(date)
     date.strftime("%H:%M:%S %d-%m-%Y ")
   end
