@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150830080441) do
+ActiveRecord::Schema.define(version: 20150830103506) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20150830080441) do
     t.integer  "user_id"
     t.boolean  "hide",             default: true
     t.string   "address"
+    t.string   "photo"
   end
 
   add_index "advertisements", ["hide"], name: "index_advertisements_on_hide", using: :btree

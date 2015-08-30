@@ -1,4 +1,4 @@
-= simple_form_for(advertisement) do |form|
+= simple_form_for advertisement, html: {multipart: true} do |form|
   = form.input :title
   = form.input :description
   = form.input :address
@@ -9,6 +9,7 @@
   = form.input :price
   = form.input :number_of_places
   = form.input :hide
+  = form.input :photo, as: :file
   = form.input :map_lat, as: :hidden
   = form.input :map_long, as: :hidden
   = link_to t('Back'), advertisements_path, class: 'btn btn-default'
