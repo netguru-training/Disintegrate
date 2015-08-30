@@ -24,7 +24,7 @@ end
         user: user,
         title: Faker::Lorem.sentence(3, true, 4),
         address: Faker::Address.street_address,
-        description: Faker::Lorem.paragraphs(rand(2..8)),
+        description: Faker::Lorem.paragraph(rand(2..8)),
         start_date: Faker::Date.between(2.days.ago, Date.today),
         end_date: Faker::Date.forward(30),
         number_of_places: Faker::Number.between(1, 10),
