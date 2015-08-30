@@ -2,8 +2,9 @@ class MessagesController < ApplicationController
   before_action :authenticate_user!
 
   expose(:users) { User.where.not(id: current_user.id) }
-  expose(:messages) { current_user.received_messages }
-  expose(:message, attributes: :message_params)
+  expose_decorated(:messages) { current_user.received_messages }
+  expose_decorated(:message, attributes: :message_params)
+
 
   def create
     self.message.sender = current_user
