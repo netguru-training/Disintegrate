@@ -45,6 +45,10 @@ class AdvertisementsController < ApplicationController
     redirect_to advertisements_path, notice: 'Advertisement deleted'
   end
 
+  def search
+    self.advertisements = Advertisement.where('address LIKE ?', "%#{params[:search][:city]}%")
+  end
+
   private
 
   def advertisements_params

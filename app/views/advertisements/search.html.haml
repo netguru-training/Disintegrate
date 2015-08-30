@@ -8,7 +8,6 @@
 
 .row
   .navi.col-lg-12
-
     = simple_form_for :search, url: search_advertisements_path , :method => :get, html: { class: "form-inline"}  do |f|
       = f.input :city, label: "City"
       = f.button :submit, "Search"
@@ -33,7 +32,7 @@
 
 
 = link_to t('New'), new_advertisement_path, class: 'btn btn-default'
-= will_paginate advertisements
+
 
 
 :javascript
