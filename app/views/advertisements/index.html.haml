@@ -1,6 +1,15 @@
+= content_for :header do
+  = stylesheet_link_tag 'https://api.mapbox.com/mapbox.js/v2.2.1/mapbox.css'
+  = javascript_include_tag 'https://api.mapbox.com/mapbox.js/v2.2.1/mapbox.js'
+
 - if advertisements.none?
   .alert.alert-success= t('Please add advertisement')
 - else
+
+.row
+  .message-wrap.col-lg-12
+    #map.wide-map
+
   %table.table.table-condensed
     %thead
       %tr
@@ -17,3 +26,14 @@
 
 = link_to t('New'), new_advertisement_path, class: 'btn btn-default'
 = will_paginate advertisements
+
+
+:javascript
+  var geojson = #{locations};
+
+  L.mapbox.accessToken = 'pk.eyJ1IjoibmV0Z3VydXdvcmtzaG9wcyIsImEiOiIwODdmZmNlYTViMzMxZTQyY2U5NjI1NWVmMGI4MzI1YSJ9.pTSx-gR1dHPt2lmMutPIZQ';
+  var map = L.mapbox.map('map', 'netguruworkshops.na5f19j3').setView([52.10,19.36], 6);
+  var myLayer = L.mapbox.featureLayer().addTo(map);
+  myLayer.setGeoJSON(geojson);
+
+
