@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 
   resources :advertisements
 
+  resources :comments, only: :create
+
   resources :applies, only: [:create]
 
   resources :messages, except: [:destroy, :edit, :show, :update]

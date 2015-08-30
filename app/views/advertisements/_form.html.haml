@@ -3,7 +3,7 @@
   = form.input :description
   = form.input :address
   = link_to 'Show on the Map', "", onclick: "showMapForm()", remote: true, id: "map_link"
-  .show_map#map
+  .show_map#map.small-map
   = form.input :start_date
   = form.input :end_date
   = form.input :price
