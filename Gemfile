@@ -21,6 +21,7 @@ gem 'geocoder'
 gem 'draper'
 gem 'will_paginate'
 gem 'carrierwave'
+gem "fog-aws"
 
 group :development do
   gem 'better_errors'
