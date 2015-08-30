@@ -31,6 +31,7 @@
       %td= t('Number of places')
       %td= advertisement.number_of_places
 
+= image_tag advertisement.photo_url
 
 = link_to t('Back'), advertisements_path, class: 'btn btn-default'
 = link_to "Message", message_path(user_id: advertisement.user.id), class: 'btn btn-default'
