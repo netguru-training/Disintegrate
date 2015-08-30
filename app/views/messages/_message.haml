@@ -4,6 +4,6 @@
       .media-body
         %small.pull-right.time
           %i.fa.fa-clock-o
-          = message.decorate.pretty_date(message.created_at)
+            = message.pretty_date(message.created_at)
         %h5.media-heading= message.sender.name
         = message.content
