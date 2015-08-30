@@ -5,6 +5,8 @@ class AdvertisementsController < ApplicationController
 
   expose(:advertisement, attributes: :advertisements_params)
   expose(:advertisements) {Advertisement.paginate(page: params[:page], per_page: 10)}
+  expose_decorated(:comments, ancestor: :advertisement)
+  expose(:comment) { Comment.new }
 
   def new
     respond_to do |format|

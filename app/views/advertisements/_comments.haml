@@ -1,0 +1,19 @@
+.row
+  .message-wrap.col-lg-12
+    .msg-wrap
+      = render comments
+
+.send-wrap
+  = simple_form_for comment do |f|
+    = f.input :content, label: "Comment"
+    = f.input :user_id, as: :hidden, input_html: { value: current_user.id }
+    = f.input :advertisement_id, as: :hidden, input_html: { value: params[:id] }
+    = f.button :submit, "Send"
+
+:javascript
+  $('#comment_content').keydown(function(event) {
+    if (event.keyCode == 13) {
+      $(this.form).submit()
+      return false;
+    }
+  });

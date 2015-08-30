@@ -1,0 +1,9 @@
+.message-wrap.col-lg-12
+  .msg-wrap
+    .media.msg
+      .media-body
+        %small.pull-right.time
+          %i.fa.fa-clock-o
+            = comment.pretty_date(comment.created_at)
+        %h5.media-heading= comment.user.name
+        = comment.content

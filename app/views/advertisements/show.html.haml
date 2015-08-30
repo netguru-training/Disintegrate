@@ -28,10 +28,13 @@
       %td= t('Number of places')
       %td= advertisement.number_of_places
 
-#map
+
 = link_to t('Back'), advertisements_path, class: 'btn btn-default'
 = link_to "Message", message_path(user_id: advertisement.user.id), class: 'btn btn-default'
 
+= render 'comments'
+
+#map
 
 :javascript
   var lat = #{advertisement.map_lat}
