@@ -6,7 +6,7 @@
 .send-wrap
   = simple_form_for message do |f|
     = f.input :content, label: "Message"
-    = f.input :receiver_id, :as => :hidden, :input_html => { :value => params[:user_id] }
+    = f.input :receiver_id, as: :hidden, input_html: { value: params[:user_id] }
     = f.button :submit, "Send"
 
 :javascript
