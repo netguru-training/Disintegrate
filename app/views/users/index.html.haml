@@ -1,17 +1,14 @@
-%table
-  %tbody
-    %tr
-      %td Name:
-      %td Email:
-      %td Description:
-      %td Links:
-    - users.each do |u|
+- if users.none?
+  .alert.alert-success= t('Please add new user')
+- else
+  %table.table.table-condensed
+    %thead
       %tr
-        %td=u.name
-        %td=u.email
-        %td=u.description
-        %td
-          -if current_user && current_user.can_edit(u)
-            =link_to 'Edit', edit_user_path(u)
+        %th Title:
+        %th Email:
+        %th Description:
+        %th Links:
+      %tbody
+        =render users
 
 
