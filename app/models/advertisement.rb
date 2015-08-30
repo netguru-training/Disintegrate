@@ -6,4 +6,9 @@ class Advertisement < ActiveRecord::Base
 
   geocoded_by :address, :latitude  => :map_lat, :longitude => :map_long
   after_validation :geocode
+
+  def is_user_applied?(user)
+    Application.find_by(advertisement: self, user: user).present?
+  end
+
 end

@@ -5,7 +5,10 @@
 
 %h1= advertisement.title
 
-= button_to 'Apply', applies_path, :params => {:advertisement_id => advertisement.id}
+- if advertisement.is_user_applied?(current_user)
+  = t('You\'ve already applied for this advertisement')
+- else
+  = button_to 'Apply', applies_path, params: { advertisement_id: advertisement.id }, class: 'btn btn-default'
 
 %table.table.table-condensed
   %tbody
