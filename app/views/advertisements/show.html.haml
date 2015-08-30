@@ -5,7 +5,7 @@
 = link_to t('<< Back to the list of advertisements'), advertisements_path
 %h1= advertisement.title
 
-#map.small-map
+#map.wide-map
 
 %h4= t('Advertisement')
 %p= advertisement.description
@@ -31,12 +31,14 @@
       %td= advertisement.number_of_places
 
 %h4= t('Images')
-= image_tag advertisement.photo_url
+
+= image_tag advertisement.photo.url
 
 - if current_user.present? && current_user.owner?(advertisement)
   = render 'applies'
 - else
   - if advertisement.is_user_applied?(current_user)
+    %h4= t('Interested?')
     %p= t('You\'ve already applied for this advertisement')
   - else
     %h4= t('Interested? Click here to apply!')
@@ -46,7 +48,7 @@
   = link_to "Send a message", message_path(user_id: advertisement.user.id), class: 'btn btn-default'
 
 
-%h4= t('Or leave us a comment')
+%h4= t('Leave us a comment')
 = render 'comments'
 
 :javascript
