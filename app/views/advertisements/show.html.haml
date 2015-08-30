@@ -31,7 +31,7 @@
       %td= advertisement.number_of_places
 
 %h4= t('Images')
-= image_tag advertisement.photo_url
+=image_tag advertisement.photo_url
 
 - if current_user.present? && current_user.owner?(advertisement)
   = render 'applies'
