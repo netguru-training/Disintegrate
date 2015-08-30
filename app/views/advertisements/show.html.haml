@@ -27,10 +27,10 @@
       %td= t('Number of places')
       %td= advertisement.number_of_places
 
+#map
 = link_to t('Back'), advertisements_path, class: 'btn btn-default'
 = link_to "Message", message_path(user_id: advertisement.user.id), class: 'btn btn-default'
 
-#map
 
 :javascript
   var lat = #{advertisement.map_lat}
@@ -52,4 +52,11 @@
         ]
     }
   }).addTo(map);
+
+  var click = document.getElementById('click'),
+    mousemove = document.getElementById('mousemove');
+
+  map.on('click', function(e) {
+    var coor = e.containerPoint.toString() + ', ' + e.latlng.toString();
+  });
   

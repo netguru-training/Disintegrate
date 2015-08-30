@@ -1,1 +1,32 @@
+= content_for :header do
+  = stylesheet_link_tag 'https://api.mapbox.com/mapbox.js/v2.2.1/mapbox.css'
+  = javascript_include_tag 'https://api.mapbox.com/mapbox.js/v2.2.1/mapbox.js'
+
 = render 'form'
+
+
+
+:javascript
+  L.mapbox.accessToken = 'pk.eyJ1IjoibmV0Z3VydXdvcmtzaG9wcyIsImEiOiIwODdmZmNlYTViMzMxZTQyY2U5NjI1NWVmMGI4MzI1YSJ9.pTSx-gR1dHPt2lmMutPIZQ';
+    var map = L.mapbox.map('map', 'netguruworkshops.na5f19j3')
+      .setView([52.41, 16.94], 14);
+  var featureLayer = L.mapbox.featureLayer().addTo(map);
+
+  var click = document.getElementById('click');
+
+  map.on('click', function(e) {
+    $('#advertisement_map_lat').val(e.latlng.lat)
+    $('#advertisement_map_long').val(e.latlng.lng)
+    featureLayer.setGeoJSON({
+    type: 'Feature',
+    geometry: {
+        type: 'Point',
+        coordinates: [
+          e.latlng.lng,
+          e.latlng.lat
+        ]
+    }
+  })
+
+
+  });

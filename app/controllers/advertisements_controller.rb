@@ -6,6 +6,13 @@ class AdvertisementsController < ApplicationController
   expose(:advertisement, attributes: :advertisements_params)
   expose(:advertisements) {Advertisement.paginate(page: params[:page], per_page: 10)}
 
+  def new
+    respond_to do |format|
+      format.html
+      format.js
+    end
+  end
+
   def create
     advertisement.user = current_user
     if advertisement.save
