@@ -1,5 +1,5 @@
 .row
-  .message-wrap.col-lg-8
+  .message-wrap.col-lg-12
     .msg-wrap
       = render messages
 
@@ -7,4 +7,12 @@
   = simple_form_for message do |f|
     = f.input :content, label: "Message"
     = f.input :receiver_id, :as => :hidden, :input_html => { :value => params[:user_id] }
-    = f.button :submit
+    = f.button :submit, "Send"
+
+:javascript
+  $('#message_content').keydown(function(event) {
+    if (event.keyCode == 13) {
+      $(this.form).submit()
+      return false;
+    }
+  });
