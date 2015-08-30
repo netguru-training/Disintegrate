@@ -5,6 +5,7 @@
 
 %h1= advertisement.title
 
+= button_to 'Apply', applies_path, :params => {:advertisement_id => advertisement.id}
 
 %table.table.table-condensed
   %tbody
