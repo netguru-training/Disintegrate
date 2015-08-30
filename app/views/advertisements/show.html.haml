@@ -2,19 +2,18 @@
   = stylesheet_link_tag 'https://api.mapbox.com/mapbox.js/v2.2.1/mapbox.css'
   = javascript_include_tag 'https://api.mapbox.com/mapbox.js/v2.2.1/mapbox.js'
 
-
+= link_to t('<< Back to the list of advertisements'), advertisements_path
 %h1= advertisement.title
 
-- if advertisement.is_user_applied?(current_user)
-  = t('You\'ve already applied for this advertisement')
-- else
-  = button_to 'Apply', applies_path, params: { advertisement_id: advertisement.id }, class: 'btn btn-default'
+#map.small-map
+
+%h4= t('Advertisement')
+%p= advertisement.description
+
+%h4= t('Details')
 
 %table.table.table-condensed
   %tbody
-    %tr
-      %td= t('Description')
-      %td= advertisement.description
     %tr
       %td= t('Address')
       %td= advertisement.address
@@ -31,14 +30,24 @@
       %td= t('Number of places')
       %td= advertisement.number_of_places
 
+%h4= t('Images')
 = image_tag advertisement.photo_url
 
-= link_to t('Back'), advertisements_path, class: 'btn btn-default'
-= link_to "Message", message_path(user_id: advertisement.user.id), class: 'btn btn-default'
+- if current_user.present? && current_user.owner?(advertisement)
+  = render 'applies'
+- else
+  - if advertisement.is_user_applied?(current_user)
+    %p= t('You\'ve already applied for this advertisement')
+  - else
+    %h4= t('Interested? Click here to apply!')
+    = button_to 'Apply', applies_path, params: { advertisement_id: advertisement.id }, class: 'btn btn-default'
 
+  %h4= t('Questions?')
+  = link_to "Send a message", message_path(user_id: advertisement.user.id), class: 'btn btn-default'
+
+
+%h4= t('Or leave us a comment')
 = render 'comments'
-
-#map.small-map
 
 :javascript
   var lat = #{advertisement.map_lat}

@@ -1,0 +1,13 @@
+- if current_user.present? && current_user.owner?(advertisement)
+  %h3= t('People applied for your advertisement')
+  %table.table.table-condensed
+    %thead
+      %tr
+        %th= t('Name')
+        %th= t('Email')
+        %th= t('Status')
+        %th= t('Action')
+    %tbody
+    - advertisement.applications.each do |application|
+      = render 'apply', application: application
+
