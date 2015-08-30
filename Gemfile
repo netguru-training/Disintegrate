@@ -18,6 +18,7 @@ gem 'devise'
 gem 'decent_exposure'
 gem 'decent_decoration'
 gem 'geocoder'
+gem 'draper'
 gem 'will_paginate'
 
 group :development do
