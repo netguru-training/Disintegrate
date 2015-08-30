@@ -20,6 +20,7 @@ gem 'decent_decoration'
 gem 'geocoder'
 gem 'draper'
 gem 'will_paginate'
+gem 'carrierwave'
 
 group :development do
   gem 'better_errors'
