@@ -18,6 +18,7 @@ gem 'devise'
 gem 'decent_exposure'
 gem 'decent_decoration'
 gem 'geocoder'
+gem 'will_paginate'
 
 group :development do
   gem 'better_errors'

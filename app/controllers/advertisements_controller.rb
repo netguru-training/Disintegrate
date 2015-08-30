@@ -4,7 +4,7 @@ class AdvertisementsController < ApplicationController
   before_action :check_ownership, only: [:edit, :update, :destroy]
 
   expose(:advertisement, attributes: :advertisements_params)
-  expose(:advertisements)
+  expose(:advertisements) {Advertisement.paginate(page: params[:page], per_page: 10)}
 
   def create
     advertisement.user = current_user
