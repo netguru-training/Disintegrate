@@ -38,4 +38,18 @@
   L.mapbox.accessToken = 'pk.eyJ1IjoibmV0Z3VydXdvcmtzaG9wcyIsImEiOiIwODdmZmNlYTViMzMxZTQyY2U5NjI1NWVmMGI4MzI1YSJ9.pTSx-gR1dHPt2lmMutPIZQ';
     var map = L.mapbox.map('map', 'netguruworkshops.na5f19j3')
       .setView([lat, long], 16);
+  L.mapbox.featureLayer({
+    // this feature is in the GeoJSON format: see geojson.org
+    // for the full specification
+    type: 'Feature',
+    geometry: {
+        type: 'Point',
+        // coordinates here are in longitude, latitude order because
+        // x, y is the standard for GeoJSON and many formats
+        coordinates: [
+          long,
+          lat
+        ]
+    }
+  }).addTo(map);
   
