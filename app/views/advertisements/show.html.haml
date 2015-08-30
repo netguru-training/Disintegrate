@@ -19,10 +19,10 @@
       %td= advertisement.address
     %tr
       %td= t('Start date')
-      %td= advertisement.start_date
+      %td= advertisement.start_date_formatted
     %tr
       %td= t('End date')
-      %td= advertisement.end_date
+      %td= advertisement.end_date_formatted
     %tr
       %td= t('Price')
       %td= advertisement.price
@@ -33,7 +33,6 @@
 -if advertisement.photo_url
   %h4= t('Images')
   =image_tag advertisement.photo_url
-
 
 - if current_user.present? && current_user.owner?(advertisement)
   = render 'applies'
