@@ -1,0 +1,3 @@
+class CommentDecorator < BaseDecorator
+
+end
