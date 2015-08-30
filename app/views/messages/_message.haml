@@ -1,9 +1,9 @@
-.message-wrap.col-lg-8
+.message-wrap.col-lg-12
   .msg-wrap
     .media.msg
       .media-body
         %small.pull-right.time
           %i.fa.fa-clock-o
-          = message.created_at
+          = message.decorate.pretty_date(message.created_at)
         %h5.media-heading= message.sender.name
         = message.content

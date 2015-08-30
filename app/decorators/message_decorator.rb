@@ -1,0 +1,2 @@
+class MessageDecorator < BaseDecorator
+end
