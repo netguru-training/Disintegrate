@@ -13,5 +13,4 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap-sprockets
-//= require advertisements
 //= require_tree .
