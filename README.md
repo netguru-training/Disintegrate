@@ -1,50 +1,30 @@
-Disintegrate
-================
+# Disintegrate
+[![Build Status](https://travis-ci.org/netguru-training/Disintegrate.svg)](https://travis-ci.org/netguru-training/Disintegrate)
 
 [![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
 
-This application was generated with the [rails_apps_composer](https://github.com/RailsApps/rails_apps_composer) gem
-provided by the [RailsApps Project](http://railsapps.github.io/).
+## :hash: Description
+Do you have problem to find new apartment or roommates? There's chance for you! Create new advertisement or ask about existing one.
 
-Rails Composer is open source and supported by subscribers. Please join RailsApps to support development of Rails Composer.
+## :closed_lock_with_key: Technology
 
-Problems? Issues?
------------
+| Name |  Version |
+| :--: | :---: |
+| [Ruby](https://www.ruby-lang.org) | 2.2.0 |
+| [Ruby on Rails](http://www.rubyonrails.org/) | 4.2.0 |
+| [PostgreSQL](http://www.postgresql.org/) | 9.4.1 |
+| [Bootstrap](https://github.com/twbs/bootstrap-sass) | 3.3.5.1 |
 
-Need help? Ask on Stack Overflow with the tag 'railsapps.'
+## :book: Setup
+* Copy files and provide your data:
+`cp database.yml.sample database.yml`
 
-Your application contains diagnostics in the README file. Please provide a copy of the README file when reporting any issues.
+* Prepare database:
+`rake db:setup`
+`rake db:seed`
 
-If the application doesn't work as expected, please [report an issue](https://github.com/RailsApps/rails_apps_composer/issues)
-and include the diagnostics.
+* Get own access to Amazon S3 service
 
-Ruby on Rails
--------------
+## :bookmark: Travis
 
-This application requires:
-
-- Ruby 2.2.0
-- Rails 4.2.0
-
-Learn more about [Installing Rails](http://railsapps.github.io/installing-rails.html).
-
-Getting Started
----------------
-
-Documentation and Support
--------------------------
-
-Issues
--------------
-
-Similar Projects
-----------------
-
-Contributing
-------------
-
-Credits
--------
-
-License
--------
+This application is integrated with Travis CI and it will automatically upload changes to heroku.
