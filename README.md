@@ -1,6 +1,8 @@
 # Disintegrate
 [![Build Status](https://travis-ci.org/netguru-training/Disintegrate.svg)](https://travis-ci.org/netguru-training/Disintegrate)
 
+[![Join the chat at https://gitter.im/netguru-training/Disintegrate](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/netguru-training/Disintegrate?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 [![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
 
 ## :hash: Description
